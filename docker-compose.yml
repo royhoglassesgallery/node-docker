@@ -6,4 +6,4 @@ services:
       - ./code:/usr/src/app/code
     ports:
       - "49160:8080"
-    command: nodemon server.js
+    command: nodemon tutorial/hello.js
