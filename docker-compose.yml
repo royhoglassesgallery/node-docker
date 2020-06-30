@@ -7,6 +7,36 @@ services:
       - type: bind
         source: ./code
         target: /usr/src/app/code
+    links:
+      - mysql
+      - mongo
     ports:
       - "49160:8080"
+    depends_on: 
+      - "mysql"
+      - "mongo"
     command: nodemon server.js
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - ./data/db:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      "MYSQL_DATABASE": "testdb"
+      "MYSQL_ROOT_PASSWORD": "12345678"
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    environment: 
+      "MONGO_INITDB_DATABASE": "testmdb"
+      "MONGO_INITDB_ROOT_USERNAME": "root"
+      "MONGO_INITDB_ROOT_PASSWORD": "12345678"
+    volumes:
+      - ./data/mongo:/data/db
+    ports:
+      - '27017-27019:27017-27019'
