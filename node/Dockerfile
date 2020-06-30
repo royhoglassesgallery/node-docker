@@ -11,7 +11,10 @@ COPY package*.json ./
 # RUN pwd
 
 RUN npm install
+RUN npm install mysql
+RUN npm install mongodb
 RUN npm install -g nodemon
+
 
 ENV NODE_PATH /usr/src/app/src/node_modules/
 
