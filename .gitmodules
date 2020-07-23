@@ -1,0 +1,6 @@
+[submodule "code/node-mangeto2-api"]
+	path = code/node-mangeto2-api
+	url = git@github.com:royhoglassesgallery/node-magento2-api.git
+[submodule "code/lens-subsystem"]
+	path = code/lens-subsystem
+	url = git@github.com:royhoglassesgallery/lens-subsystem.git
