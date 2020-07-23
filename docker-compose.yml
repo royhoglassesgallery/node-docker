@@ -6,4 +6,5 @@ services:
       - ./code:/usr/src/app/code
     ports:
       - "49160:8080"
+      - "49170:8000"
     command: nodemon server.js

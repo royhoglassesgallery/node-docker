@@ -11,6 +11,7 @@ COPY package*.json ./
 # RUN pwd
 
 RUN npm install
+RUN npm install -g pm2
 RUN npm install -g nodemon
 RUN npm install -g grunt
 
