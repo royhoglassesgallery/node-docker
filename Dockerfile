@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:8
 
 # Create app directory
 WORKDIR /usr/src/app/src
@@ -12,6 +12,7 @@ COPY package*.json ./
 
 RUN npm install
 RUN npm install -g nodemon
+RUN npm install -g grunt
 
 ENV NODE_PATH /usr/src/app/src/node_modules/
 
